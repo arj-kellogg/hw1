@@ -67,14 +67,40 @@
 .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
+DROP TABLE IF EXISTS movie;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS top_cast;
 
 -- Create new tables, according to your domain model
--- TODO!
+CREATE TABLE movie (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  year_released TEXT,
+  MPAA_rating TEXT,
+  director TEXT
+);
 
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT,
+  movie_name TEXT,
+  role TEXT,
+  year TEXT
+);
+
+CREATE TABLE top_cast (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  actor id TEXT,
+  movie id TEXT
+);
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO!
+INSERT INTO movie (title, year_released, MPAA_rating, director)
+VALUES ("Batman Begins", "2005",  "PG-13", "Christopher Nolan");
+INSERT INTO movie (title, year_released, MPAA_rating, director)
+VALUES ("The Dark Knight", "2008",  "PG-13", "Christopher Nolan");
+INSERT INTO movie (title, year_released, MPAA_rating, director)
+VALUES ("The Dark Knight Rises", "2012",  "PG-13", "Christopher Nolan");
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -82,7 +108,7 @@
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+Select * from movie;
 
 -- Prints a header for the cast output
 .print ""
