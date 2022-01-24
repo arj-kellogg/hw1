@@ -139,8 +139,12 @@ VALUES ("Anne Hathaway", "The Dark Knight Rises", "Selina Kyle", "2012");
 .print "======"
 .print ""
 
+.width 25 6 6 20
+
 -- The SQL statement for the movies output
-Select * from movie;
+Select title, year_released, MPAA_rating, director from movie;
+
+
 
 -- Prints a header for the cast output
 .print ""
