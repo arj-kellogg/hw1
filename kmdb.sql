@@ -83,7 +83,7 @@ CREATE TABLE movie (
 CREATE TABLE actors (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT,
-  movie_name TEXT,
+  movie_title TEXT,
   role TEXT,
   year TEXT
 );
@@ -102,6 +102,38 @@ VALUES ("The Dark Knight", "2008",  "PG-13", "Christopher Nolan");
 INSERT INTO movie (title, year_released, MPAA_rating, director)
 VALUES ("The Dark Knight Rises", "2012",  "PG-13", "Christopher Nolan");
 
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Christian Bale", "Batman Begins", "Bruce Wayne", "2005");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Michael Caine", "Batman Begins", "Alfred", "2005");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Liam Neeson", "Batman Begins", "Ra's Al Ghul", "2005");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Katie Holmes", "Batman Begins", "Rachel Dawes", "2005");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Gary Oldman", "Batman Begins", "Commissioner Gordon", "2005");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Christian Bale", "The Dark Knight", "Bruce Wayne", "2008");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Michael Caine", "The Dark Knight", "Alfred", "2008");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Health Ledger", "The Dark Knight", "Joker", "2008");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Aaron Eckhart", "The Dark Knight", "Harvey Dent", "2008");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Maggie Gyllenhaal", "The Dark Knight", "Rachel Dawes", "2008");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Christian Bale", "The Dark Knight Rises", "Bruce Wayne", "2012");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Gary Oldman", "The Dark Knight Rises", "Comissioner Gordon", "2012");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Tom Hardy", "The Dark Knight Rises", "Bane", "2012");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Joseph Gordon-Levitt", "The Dark Knight Rises", "John Blake", "2012");
+INSERT INTO actors (name, movie_title, role, year)
+VALUES ("Anne Hathaway", "The Dark Knight Rises", "Selina Kyle", "2012");
+
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -116,6 +148,7 @@ Select * from movie;
 .print "========"
 .print ""
 
+.width 25 25 20
 
 -- The SQL statement for the cast output
--- TODO!
+Select movie_title, name, role from actors
